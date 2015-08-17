@@ -2,20 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct trie_s {
-    unsigned     size;
-    const char **strings;
-    void       **values;
-    unsigned    *weight;
-    unsigned    *cp;
-} trie_s;
+typedef struct trie_s trie_s;
 
-typedef struct trie_cursor_s {
-    unsigned level;
-    /* next string position */
-    unsigned pos;
-    unsigned idx;
-} trie_cursor_s;
+typedef struct trie_cursor_s trie_cursor_s;
 
 void trie_create(trie_s *ta, const char **strings, void **values, unsigned size) {
     unsigned *weight   = malloc(sizeof(unsigned) * size);
